@@ -10,7 +10,7 @@ function fish_prompt -d "Snorin - oh-my-zsh sorin inspired prompt"
     and set -l current_branch (git rev-parse HEAD | cut -c1-7)
     or set -l current_branch (git symbolic-ref --short HEAD)
     or set -l current_branch '???'
-    printf (set_color blue)git(set_color brwhite):(set_color red)$current_branch' '
+    printf (set_color blue)git(set_color brwhite):(set_color red)$current_branch
 
 
     #take advantage of Fish `String` commands
@@ -32,27 +32,29 @@ function fish_prompt -d "Snorin - oh-my-zsh sorin inspired prompt"
           #this can happen if you add a file, then delete it after staging the change
           #IMHO these two just cancel each other out
         case "A"
-          printf (set_color green)✚' '
+          printf (set_color green)✚
         case "D"
-          printf (set_color red)✖' '
+          printf (set_color red)✖
         case "M"
-          printf (set_color blue)✹' '
+          printf (set_color blue)✹
         case "R"
         case "RM"
-          printf (set_color magenta)➜' '
+          printf (set_color magenta)➜
         case "DU"
         case "UU"
-          printf (set_color yellow)═' '
+          printf (set_color yellow)═
               # this is usually a new file... usually
         case "\?\?"
-          printf (set_color cyan)★' '
+          printf (set_color cyan)★
         case "*"
-          printf (set_color yellow)◊' '
+          printf (set_color yellow)◊
           #if you start getting this a lot,
           #please open an issue or file a PR
           #I wanted something generic that didn't really mean "good" or "bad"
       end
     end
+
+    printf ' '
   end
 
   # print fun part of prompt
